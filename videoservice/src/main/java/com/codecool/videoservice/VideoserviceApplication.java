@@ -28,6 +28,21 @@ public class VideoserviceApplication {
 					.url("https://www.youtube.com/watch?v=Q8Tiz6INF7I")
 					.build();
 			videoRepository.save(video);
+			Video video1 = Video.builder()
+					.title("Shrek VS Thanos DESPACITO battle reupload")
+					.url("https://www.youtube.com/watch?v=fBDsTVlu4Gw")
+					.build();
+			videoRepository.save(video1);
+			Video video2 = Video.builder()
+					.title("Deep Purple - Highway Star")
+					.url("https://www.youtube.com/watch?v=Wr9ie2J2690&ab_channel=JanPlexy")
+					.build();
+			videoRepository.save(video2);
+			Video video3 = Video.builder()
+					.title("il vento d'oro")
+					.url("https://www.youtube.com/watch?v=U0TXIXTzJEY")
+					.build();
+			videoRepository.save(video3);
 		};
 	}
 
