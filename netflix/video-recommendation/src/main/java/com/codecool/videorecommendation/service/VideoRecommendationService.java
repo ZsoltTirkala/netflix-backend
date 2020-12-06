@@ -18,4 +18,23 @@ public class VideoRecommendationService {
     public List<VideoRecommendation> getAllVideo() {
         return videoRecommendationRepository.findAll();
     }
+
+    public void addNewRecommendation(int id, String recommendation, int rating) {
+        VideoRecommendation videoRecommendation = VideoRecommendation
+                .builder()
+                .recommendation(recommendation)
+                .rating(rating)
+                .videoId(id)
+                .build();
+
+        videoRecommendationRepository.save(videoRecommendation);
+    }
+
+    public List<VideoRecommendation> getAllRecommendation(int videoId) {
+       return videoRecommendationRepository.getAllRecommendation(videoId);
+    }
+
+//    public void editRecommendation(int videoId, String recommendation, int rating) {
+//        videoRecommendationRepository.editRecommendation(recommendation,rating,videoId,);
+//    }
 }

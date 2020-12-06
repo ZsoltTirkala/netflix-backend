@@ -24,14 +24,22 @@ public class VideRecommendationController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @ApiOperation(value = "Get a video's recommendation")
     @GetMapping("/recommendation/{id}")
-    public List<VideoRecommendation> getAllRecommendation(@PathVariable Long id) {
-        return null;
+    public List<VideoRecommendation> getAllRecommendation(@PathVariable int videoId) {
+        return videoRecommendationService.getAllRecommendation(videoId);
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @ApiOperation(value = "Add new recommendation to a video")
     @PostMapping("/recommendation/{id}")
-    public void addNewRecommendation(@PathVariable Long id,@RequestParam(value = "recommendation") String recommendation) {
-
+    public void addNewRecommendation(@PathVariable int videoId,@RequestParam(value = "recommendation") String recommendation, @RequestParam(value = "rating") int rating) {
+    videoRecommendationService.addNewRecommendation(videoId,recommendation,rating);
     }
+
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @ApiOperation(value = "Edit a recommendation")
+//    @PutMapping("/recommendation")
+//    public void editRecommendation(@PathVariable int videoId,@RequestParam(value = "recommendation") String recommendation, @RequestParam(value = "rating") int rating) {
+//        videoRecommendationService.editRecommendation(videoId,recommendation,rating);
+//    }
+
 }
