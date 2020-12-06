@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/videoservice/pom.xml" />
         <option value="$PROJECT_DIR$/service-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/video-recommendation/pom.xml" />
       </list>
     </option>
   </component>
