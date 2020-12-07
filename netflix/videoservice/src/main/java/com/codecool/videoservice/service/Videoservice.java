@@ -1,6 +1,7 @@
 package com.codecool.videoservice.service;
 
 import com.codecool.videoservice.entity.Video;
+import com.codecool.videoservice.model.VideoRecommendationModel;
 import com.codecool.videoservice.repository.VideoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,14 @@ public class Videoservice {
     @Autowired
     VideoRepository videoRepository;
 
+    @Autowired
+    VideoRecommendationCaller videoRecommendationCaller;
+
     public List<Video> getAllVideo() {
         return videoRepository.findAll();
+    }
+
+    public VideoRecommendationModel getVideoRecommendation() {
+        return videoRecommendationCaller.videoWithRecommendation();
     }
 }

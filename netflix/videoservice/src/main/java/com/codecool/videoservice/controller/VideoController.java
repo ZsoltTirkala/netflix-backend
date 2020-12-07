@@ -1,6 +1,7 @@
 package com.codecool.videoservice.controller;
 
 import com.codecool.videoservice.entity.Video;
+import com.codecool.videoservice.model.VideoRecommendationModel;
 import com.codecool.videoservice.service.Videoservice;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -39,5 +40,12 @@ public class VideoController {
     @PostMapping("/video-update")
     public void updateVideoAndRecommendation(@RequestParam(value = "video-title") String title, @RequestParam(value = "video-url") String url, @RequestParam(value = "comment") String comment) {
 
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @ApiOperation(value = "Update video and recommendations")
+    @GetMapping("/videowithrecommendation")
+    public VideoRecommendationModel getVideoRecommendationModel() {
+       return videoService.getVideoRecommendation();
     }
 }
