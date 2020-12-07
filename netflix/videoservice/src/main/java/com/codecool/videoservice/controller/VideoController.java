@@ -25,7 +25,8 @@ public class VideoController {
     @ApiOperation(value = "Send all the videos")
     @GetMapping("/videos")
     public List<Video> getAllVideo() {
-        return videoService.getAllVideo();
+        List<Video> allVideo = videoService.getAllVideo();
+        return allVideo;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -45,7 +46,11 @@ public class VideoController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @ApiOperation(value = "Update video and recommendations")
     @GetMapping("/videowithrecommendation")
-    public VideoRecommendationModel getVideoRecommendationModel() {
-       return videoService.getVideoRecommendation();
+    public String getVideoRecommendationModel() {
+        log.info("asdasda");
+        String videoRecommendation = videoService.getVideoRecommendation();
+        log.info("VIDEOSERVICE !!!!!!-----------------------------------------------------------------");
+        log.info(videoRecommendation.toString());
+        return videoRecommendation;
     }
 }

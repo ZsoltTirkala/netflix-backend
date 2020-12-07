@@ -25,7 +25,11 @@ public class VideRecommendationController {
     @ApiOperation(value = "Get a video's recommendation")
     @GetMapping("/recommendation/{id}")
     public List<VideoRecommendation> getAllRecommendation(@PathVariable(value = "id") int videoId) {
-        return videoRecommendationService.getAllRecommendation(videoId);
+
+        List<VideoRecommendation> allRecommendation = videoRecommendationService.getAllRecommendation(videoId);
+        log.info("VIDEO RECOMMENDATION!!!!!!!!! ----------------------------------------------------------------------------");
+        log.info(allRecommendation.toString());
+        return allRecommendation;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")

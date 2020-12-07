@@ -23,7 +23,7 @@ public class Videoservice {
         return videoRepository.findAll();
     }
 
-    public VideoRecommendationModel getVideoRecommendation() {
+    public String getVideoRecommendation() {
         return videoRecommendationCaller.videoWithRecommendation();
     }
 }

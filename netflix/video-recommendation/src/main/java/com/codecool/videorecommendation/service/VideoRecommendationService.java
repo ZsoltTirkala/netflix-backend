@@ -12,8 +12,13 @@ import java.util.List;
 @Slf4j
 public class VideoRecommendationService {
 
-    @Autowired
+
     VideoRecommendationRepository videoRecommendationRepository;
+
+    @Autowired
+    public VideoRecommendationService(VideoRecommendationRepository videoRecommendationRepository) {
+        this.videoRecommendationRepository = videoRecommendationRepository;
+    }
 
     public List<VideoRecommendation> getAllVideo() {
         return videoRecommendationRepository.findAll();

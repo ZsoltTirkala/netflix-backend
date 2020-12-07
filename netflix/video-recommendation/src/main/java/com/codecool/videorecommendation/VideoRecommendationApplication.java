@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient
 public class VideoRecommendationApplication {
 
-@Autowired
+	@Autowired
 	VideoRecommendationRepository videoRecommendationRepository;
 
 	public static void main(String[] args) {

@@ -10,15 +10,16 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @Slf4j
 public class VideoRecommendationCaller {
+
     @Autowired
     private RestTemplate restTemplate;
 
     @Value("${video-recommendation.url}")
     private String baseUrl;
 
-    public VideoRecommendationModel videoWithRecommendation() {
+    public String videoWithRecommendation() {
         log.info("== Video with recommendation ==");
-        VideoRecommendationModel body = restTemplate.getForEntity(baseUrl + "/recommendation", VideoRecommendationModel.class).getBody();
-        return body;
+        VideoRecommendationModel body = restTemplate.getForEntity(baseUrl + "recommendation/1", VideoRecommendationModel.class).getBody();
+        return body.getRecommendation();
     }
 }
